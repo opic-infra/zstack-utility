@@ -10731,6 +10731,12 @@ host side snapshot files chian:
         vm_info.uuid = vm_uuid
         vm_info.virtualizer = "qemu-kvm"
         vm_info.version = qemu.get_running_version(vm_uuid)
+        # A VM booted from installation ISO has no installed guest OS, but its
+        # QEMU process still uses the host emulator. Avoid returning an empty
+        # version because hypervisor metadata requires a non-null version.
+        if not vm_info.version:
+            logger.warning("cannot resolve guest virtualizer version for vm[%s]; use host QEMU version", vm_uuid)
+            vm_info.version = qemu.get_version()
 
     @kvmagent.replyerror
     def set_emulator_pinning(self, req):
