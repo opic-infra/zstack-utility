@@ -1,0 +1,1 @@
+if(1!==e.length)return null;let i=e.charCodeAt();return i?t1.lookup(i):null

@@ -1,0 +1,1 @@
+(t&&t.shiftKey&&i&&i<256&&"!@#$%^&*()_+{}|:<>?~".indexOf(String.fromCharCode(i))>-1&&"ShiftLeft"!==e&&"ShiftRight"!==e)?(this._sendKeyEvent(t$.A.XK_Shift_L,"ShiftLeft",!0),this._sendKeyEvent(i,e,!0),this._sendKeyEvent(i,e,!1),this._sendKeyEvent(t$.A.XK_Shift_L,"ShiftLeft",!1)):this._sendKeyEvent(i,e,!0)}_handleKeyUp(t){
